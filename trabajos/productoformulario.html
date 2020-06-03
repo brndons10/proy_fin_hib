@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Producto - formulario</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2>Producto - Formulario</h2>
+        <p>Ingresar los datos del nuevo producto.</p>
+        <form method="post" action="agregarproducto.php" id="nombreproducto">
+            <br><br>
+            Nombre del producto:*
+            <input type="text" name="nombreproducto" id="nombreproducto" required>
+            <br><br>
+            Precio:*
+            <input type="text" name="precio" id="precio" required>
+            <br><br>
+            Nombre del archivo imagen (incluir extension):*
+            <input type="text" name="imagen" id="imagen" required>
+            <br><br>
+           
+            Categoria: (1=Abarrotes, 2=Ferreteria, 3=Electronicos, 4=Muebles)*
+            <input type="number" min="1" max="4" name="categoria" id="categoria" required>
+            <br><br>
+            <input type="submit" value="  Agregar  ">
+            
+        </form>
+    </body>
+</html>
