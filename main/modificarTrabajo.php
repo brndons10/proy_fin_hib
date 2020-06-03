@@ -46,7 +46,7 @@ and open the template in the editor.
             <br><br>
             <input type="submit" value="  Modificar  ">
         </form>
-        
+        <a href='VerTrabajos.php'> Volver </a>
     </body>
 </html>
 <?php

@@ -38,6 +38,7 @@ and open the template in the editor.
         }else{
             echo"ERROR. El producto con id: ".$id." y nombre ".$categoria." no se pudo modificar.";
         }
+        echo"<a href='VerTrabajos.php'>  No </a>";
         ?>
     </body>
 </html>

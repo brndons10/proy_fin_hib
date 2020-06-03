@@ -72,6 +72,7 @@
             }
             echo "</table>";
         }
+        echo"<a href='VerTrabajos.php'> Regresar </a>";
         ?>
     </body>
 </html>
