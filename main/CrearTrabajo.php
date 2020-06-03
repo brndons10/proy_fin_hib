@@ -37,7 +37,7 @@ and open the template in the editor.
         else{
             echo"No se ha podido agregar el trabajo ".$categoria;
         }
-        
+        echo"<a href='VerTrabajos.php'>  Volver </a>";
         ?>
     </body>
 </html>
