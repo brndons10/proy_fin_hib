@@ -22,7 +22,7 @@ and open the template in the editor.
         $tel=$_POST['tel'];
        include"CONEXION.php";
         //Sentencia para insertar datos en la base 
-        $sentencia="insert into trabajos (id, categoria, paga, dir, desc, tel) values ($id,'$categoria','$paga','$dir', '$desc', '$tel')";
+        $sentencia="insert into trabajos values ('$categoria','$paga','$dir', '$desc', '$tel')";
         echo"<br><br>";
         
         

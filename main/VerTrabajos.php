@@ -30,10 +30,10 @@ and open the template in the editor.
         </p>
 <?php
 // Conexión a la base de datos
-include "CONEXION.php"
+include "CONEXION.php";
 
 
-$sentencia = "select id, categoria, paga, dir, desc, tel from trabajos order by id";
+$sentencia = "select * from trabajos order by id";
 //Ejecutar sentencia
 $resultado = mysqli_query($conexion, $sentencia);
 //Validar resultado de la sentencia
@@ -56,7 +56,7 @@ while ($fila = mysqli_fetch_array($resultado)) {
     " <td>" . $fila['categoria'] . "</td>" .
     "<td>" . $fila['paga'] . "</td>" .
     "<td>" . $fila['dir'] . "</td>" .
-    "<td>" .$fila['desc'] . "'></td>" .
+    "<td>" .$fila['desc'] . "</td>" .
     "<td>" . $fila['tel'] . "</td>" .
     "</tr>";
 }
