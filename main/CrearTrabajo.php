@@ -22,7 +22,8 @@ and open the template in the editor.
         $tel=$_POST['tel'];
        include"CONEXION.php";
         
-        $sentencia="insert into trabajos (id, categoria, paga, dir, desc, tel) values ($id,'$categoria','$paga','$dir', '$desc', '$tel')";
+        $sentencia="insert into trabajos (id, categoria, paga, dir, desc, tel) 
+            values ($id,'$categoria','$paga','$dir', '$desc', '$tel')";
         echo"<br><br>";
         
         
@@ -32,10 +33,10 @@ and open the template in the editor.
         //Validar registro agregado
         $numero=  mysqli_affected_rows($conexion);
         if($resultado && $numero==1){
-            echo "EL producto ".$categoria."se ha agregado exitosamente.";
+            echo "El trabajo ".$categoria."se ha agregado exitosamente.";
         }
         else{
-            echo"No se ha podido agregar el producto ".$categoria;
+            echo"No se ha podido agregar el trabajo ".$categoria;
         }
         
         ?>

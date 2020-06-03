@@ -35,12 +35,12 @@
         if (isset($_POST['categoria'])and $_POST['categoria'] != "") {
             echo "codigo PHP";
             include "CONEXION.php";
-            //Obtener nombre del producto a buscar
+            //Obtener nombre del trabajo a buscar
             $categoria = $_POST['categoria'];
-            $sentencia = "select id, categoria, paga, dir, desc, tel from productos "
+            $sentencia = "select id, categoria, paga, dir, desc, tel from trabajo "
                     . "where categoria like '%"
                     . $categoria
-                    . "%' order by id,categoria";
+                    . "%'";
             echo $sentencia;
 
 
