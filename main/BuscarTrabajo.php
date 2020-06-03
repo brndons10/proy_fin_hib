@@ -25,22 +25,22 @@
 
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
             Nombre:&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="text" id='nombreproducto' name='nombreproducto'>
+            <input type="text" id='categoria' name='categoria'>
             <br><br>
             <input type='submit' value=' Buscar '>
         </form>
 
         <?php
         // put your code here
-        if (isset($_POST['nombreproducto'])and $_POST['nombreproducto'] != "") {
+        if (isset($_POST['categoria'])and $_POST['categoria'] != "") {
             echo "codigo PHP";
             include "CONEXION.php";
             //Obtener nombre del producto a buscar
-            $nombreprod = $_POST['nombreproducto'];
+            $categoria = $_POST['categoria'];
             $sentencia = "select id, categoria, paga, dir, desc, tel from productos "
-                    . "where nombreproducto like '%"
-                    . $nombreprod
-                    . "%' order by idcategoria,nombreproducto";
+                    . "where categoria like '%"
+                    . $categoria
+                    . "%' order by id,categoria";
             echo $sentencia;
 
 
@@ -62,12 +62,12 @@
             ";
             while ($fila = mysqli_fetch_array($resultado)) {
                 echo "<tr> 
-                <td>" . $fila['idproducto'] . "</td>" .
-                " <td>" . $fila['nombreproducto'] . "</td>" .
-                "<td>" . $fila['precio'] . "</td>" .
-                "<td>" . $fila['imagen'] . "</td>" .
-                "<td>" . "<img src='../imagenes/" . $fila['imagen'] . "'></td>" .
-                "<td>" . $fila['idcategoria'] . "</td>" .
+                <td>" . $fila['id'] . "</td>" .
+                " <td>" . $fila['categoria'] . "</td>" .
+                "<td>" . $fila['paga'] . "</td>" .
+                "<td>" . $fila['dir'] . "</td>" .
+                "<td>" . $fila['desc'] . "</td>" .
+                "<td>" . $fila['tel'] . "</td>" .
                 "</tr>";
             }
             echo "</table>";
