@@ -19,7 +19,7 @@ and open the template in the editor.
         //echo "Eliminar el producto: ".$id." ".$categoria;
         
         include 'CONEXION.php';
-        $sentencia="delete from trabajos where id= $id";
+        $sentencia="delete from trabajos where id= '$id'";
         echo "<br><br>";
         echo $sentencia;
         
