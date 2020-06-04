@@ -53,11 +53,11 @@ echo "<table>
 while ($fila = mysqli_fetch_array($resultado)) {
     echo "<tr> 
                 <td>" . $fila['id'] . "</td>" .
-    " <td>" . $fila['categoria'] . "</td>" .
-    "<td>" . $fila['paga'] . "</td>" .
-    "<td>" . $fila['dir'] . "</td>" .
-    "<td>" .$fila['desc'] . "'></td>" .
-    "<td>" . $fila['tel'] . "</td>" .
+              "<td>" . $fila['categoria'] . "</td>" .
+              "<td>" . $fila['paga'] . "</td>" .
+              "<td>" . $fila['dir'] . "</td>" .
+              "<td>" .$fila['desc'] . "'></td>" .
+              "<td>" . $fila['tel'] . "</td>" .
     "</tr>";
 }
 echo "</table>";
