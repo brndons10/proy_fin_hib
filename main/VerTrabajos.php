@@ -30,10 +30,10 @@ and open the template in the editor.
         </p>
 <?php
 // Conexión a la base de datos
-include "CONEXION.php"
+include "CONEXION.php";
 
 
-$sentencia = "select id, categoria, paga, dir, desc, tel from trabajos order by id";
+$sentencia = " select * from trabajos order by id";
 //Ejecutar sentencia
 $resultado = mysqli_query($conexion, $sentencia);
 //Validar resultado de la sentencia
@@ -51,13 +51,21 @@ echo "<table>
             </tr>
             ";
 while ($fila = mysqli_fetch_array($resultado)) {
-    echo "<tr> 
+     echo "<tr> 
                 <td>" . $fila['id'] . "</td>" .
-              "<td>" . $fila['categoria'] . "</td>" .
-              "<td>" . $fila['paga'] . "</td>" .
-              "<td>" . $fila['dir'] . "</td>" .
-              "<td>" .$fila['desc'] . "'></td>" .
-              "<td>" . $fila['tel'] . "</td>" .
+    " <td>" . $fila['categoria'] . "</td>" .
+    "<td>$ " . $fila['paga'] . "</td>" .
+    "<td>" . $fila['dir'] . "</td>" .
+    "<td>" .$fila['desc'] . "'></td>" .
+    "<td>" . $fila['tel'] . "</td>" .
+    "<td><a href='eliminarTrabajo.php?id=".
+    $fila['id']."& nombre=".$fila['categoria'].
+    "'>Eliminar</a></td>".
+    "<td><a href='modificarTrabajo.php?id=".$fila['id']."& categoria=". $fila['categoria'].
+    "&paga=".$fila['paga']."&dir=".$fila['dir']."&desc=".$fila['desc'].
+     "&tel=".$fila['tel'].
+    "'>Modificar</a>".
+    "</td>".
     "</tr>";
 }
 echo "</table>";

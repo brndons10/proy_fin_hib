@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Creacion</title>
+        <title>Creación</title>
     </head>
     <body>
         <h2>Crear Trabajo</h2>
@@ -21,9 +21,8 @@ and open the template in the editor.
         $desc=$_POST['desc'];
         $tel=$_POST['tel'];
        include"CONEXION.php";
-        
-        $sentencia="insert into trabajos (id, categoria, paga, dir, desc, tel) 
-            values ($id,'$categoria','$paga','$dir', '$desc', '$tel')";
+        //Sentencia para insertar datos en la base 
+        $sentencia="insert into trabajos values ('$id','$categoria','$paga','$dir', '$desc', '$tel')";
         echo"<br><br>";
         
         
@@ -33,12 +32,12 @@ and open the template in the editor.
         //Validar registro agregado
         $numero=  mysqli_affected_rows($conexion);
         if($resultado && $numero==1){
-            echo "El trabajo ".$categoria."se ha agregado exitosamente.";
+            echo "EL trabajo ".$categoria."se ha agregado exitosamente.";
         }
         else{
             echo"No se ha podido agregar el trabajo ".$categoria;
         }
-        
+        echo"<a href='VerTrabajos.php'>  Volver </a>";
         ?>
     </body>
 </html>

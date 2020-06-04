@@ -37,7 +37,7 @@
             include "CONEXION.php";
             //Obtener nombre del trabajo a buscar
             $categoria = $_POST['categoria'];
-            $sentencia = "select id, categoria, paga, dir, desc, tel from trabajo "
+            $sentencia = "select * from trabajos "
                     . "where categoria like '%"
                     . $categoria
                     . "%'";
@@ -52,12 +52,12 @@
             }
             echo "<table>
             <tr>
-            <th>id</th>
-            <th>categoria</th>
-            <th>paga</th>
-            <th>dir</th>
-            <th>desc</th>
-            <th>tel</th>
+            <th>ID</th>
+            <th>Categoría</th>
+            <th>Paga</th>
+            <th>Dirección</th>
+            <th>Descripción</th>
+            <th>Teléfono</th>
             </tr>
             ";
             while ($fila = mysqli_fetch_array($resultado)) {
@@ -72,6 +72,7 @@
             }
             echo "</table>";
         }
+        echo"<a href='VerTrabajos.php'> Regresar </a>";
         ?>
     </body>
 </html>
